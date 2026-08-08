@@ -104,6 +104,10 @@ jobs:
             -in .github/scripts/legksu.patch.enc \
             -out /tmp/legksu.patch \
             -pass pass:"$SCRIPT_KEY"
+          openssl enc -d -aes-256-cbc -pbkdf2 \
+            -in .github/scripts/selinux.patch.enc \
+            -out /tmp/selinux.patch \
+            -pass pass:"$SCRIPT_KEY"
 
           chmod +x /tmp/build.sh
 
